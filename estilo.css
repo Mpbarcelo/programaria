@@ -1,11 +1,12 @@
-body {
-    text-align: center;
-    font-family: Open Sans, sans-serif;
-    background-color: #8a71c9;
-    color: #ffffff;
+body{
+    text-align:center;
+    font-family:Open Sans,sans-serif;
+    background-color:#8a71c9;
+    color:#ffffff;
     margin: 0px 0px 30px 0px;
-}
-
+  }
+  
+ 
 h2 {
     color: #2a0074;
     font-size: 40px;
@@ -55,18 +56,16 @@ img {
 
 }
 
-ul {
-    list-style: none;
+ul{
+    list-style-type: none;
     line-height: 2;
-    padding-left: 0;
-
-}
-
-a {
+  }
+  
+  a{
     text-decoration: none;
     color: #99ffff;
     font-weight: 700;
-}
+  }
 
 .principal {
     background: #ff6cb5;
@@ -87,9 +86,39 @@ a {
     margin: 0 89px;
 }
 
-button{
+button {
     background: #41f341;
     border: 1px solid transparent;
     padding: 2px 20px;
     border-radius: 3px;
-   }
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: auto;
+    background-color: #333;
+
+}
+
+.rodape-itens a {
+    color: rgb(83, 182, 157);
+}
+
+.rodape-itens {
+    color: #5ebed6;
+}
+
+.rodape {
+    background: #0b171f;
+    margin-top: 100px;
+    height: 100%;
+    padding: 1.8em;
+    font-size: .75em;
+    color: #6f8597;
+    letter-spacing: .3em;
+    text-align: center;
+}

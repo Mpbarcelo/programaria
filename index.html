@@ -1,14 +1,11 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
-
+    <meta charset="UTF-8">
     <title>Ada Lovelace</title>
     <link rel="stylesheet" href="estilo.css">
-
-
 </head>
-
-
 
 <body>
 
@@ -133,31 +130,44 @@
             </li>
         </ul>
     </nav>
-    <h4>Quer saber mais sobre outras mulheres que fizeram historia na programação? Deixe seu email!</h4>
-    <form>
+    <h4>Quer saber mais sobre outras mulheres que fizeram história na programação? Deixe seu email!</h4>
+    <form onsubmit="return validaFormulario()">
         <label for="nome">Nome:</label>
         <input id="nome" type="text">
         <label for="email">Email:</label>
         <input id="email" type="email">
         <label for="telefone">Telefone:</label>
-        <input id="telefone" type="number">
-        <button id="botaoEnviar">Enviar</button>
+        <input id="telefone" type="tel">
+        <button id="botaoEnviar" type="submit">Enviar</button>
     </form>
     <script>
-
         function validaFormulario() {
             var nome = document.getElementById("nome").value;
             var email = document.getElementById("email").value;
             var telefone = document.getElementById("telefone").value;
 
             if (nome !== "" && email !== "" && telefone !== "") {
-                alert("Prontinho! Você receberá as novidades por email.");
+                // Crea un mensaje emergente
+                var mensaje = document.createElement("p");
+                mensaje.textContent = "Prontinho! Você receberá as novidades por email.";
+                document.body.appendChild(mensaje);
+                return false; // Evita el envío del formulario
             } else {
                 alert("Por favor, preencha os campos nome, email e telefone.");
+                return false; // Evita el envío del formulario
             }
         }
-
     </script>
+    <footer class="rodape">
+        <div class="rodape-itens">
+          <h4>&copy;
+            Marcia P. Barcelo - Todos os direitos reservados - Desenvolvedora Web /.
+            &rarr; <a href="https://www.linkedin.com/in/mpbarcelo/" target="_blank">
+              Linkedin da Autora
+            </a></h4>
+        </div>
+      </footer>
 </body>
+
 
 </html>
