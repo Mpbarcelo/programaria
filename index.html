@@ -131,42 +131,48 @@
         </ul>
     </nav>
     <h4>Quer saber mais sobre outras mulheres que fizeram história na programação? Deixe seu email!</h4>
-    <form onsubmit="return validaFormulario()">
+    <form onsubmit="return validaFormulario(event)">
         <label for="nome">Nome:</label>
-        <input id="nome" type="text">
+        <input id="nome" type="text" required>
         <label for="email">Email:</label>
-        <input id="email" type="email">
+        <input id="email" type="email" required>
         <label for="telefone">Telefone:</label>
         <input id="telefone" type="tel">
         <button id="botaoEnviar" type="submit">Enviar</button>
     </form>
-    <script>
-        function validaFormulario() {
-            var nome = document.getElementById("nome").value;
-            var email = document.getElementById("email").value;
-            var telefone = document.getElementById("telefone").value;
 
-            if (nome !== "" && email !== "" && telefone !== "") {
-                // Crea un mensaje emergente
-                var mensaje = document.createElement("p");
-                mensaje.textContent = "Prontinho! Você receberá as novidades por email.";
-                document.body.appendChild(mensaje);
-                return false; // Evita el envío del formulario
-            } else {
-                alert("Por favor, preencha os campos nome, email e telefone.");
-                return false; // Evita el envío del formulario
+    <script>
+        function validaFormulario(event) {
+            const nomeInput = document.getElementById("nome");
+            const emailInput = document.getElementById("email");
+            const telefoneInput = document.getElementById("telefone");
+
+            if (nomeInput.value.trim() === "" || emailInput.value.trim() === "") {
+                alert("Por favor, preencha os campos nome e email.");
+                event.preventDefault(); // Impede o envio do formulário se os campos estiverem vazios
+                return false;
             }
+
+            // Melhor verificar o telefone somente se ele for preenchido
+            if (telefoneInput.value.trim() !== "" && isNaN(telefoneInput.value)) {
+                alert("O campo telefone deve conter apenas números.");
+                event.preventDefault();
+                return false;
+            }
+
+            alert("Prontinho! Você receberá as novidades por email.");
         }
     </script>
+
     <footer class="rodape">
         <div class="rodape-itens">
-          <h4>&copy;
-            Marcia P. Barcelo - Todos os direitos reservados - Desenvolvedora Web /.
-            &rarr; <a href="https://www.linkedin.com/in/mpbarcelo/" target="_blank">
-              Linkedin da Autora
-            </a></h4>
+            <h4>&copy;
+                Marcia P. Barcelo - Todos os direitos reservados - Desenvolvedora Web /.
+                &rarr; <a href="https://www.linkedin.com/in/mpbarcelo/" target="_blank">
+                    Linkedin da Autora
+                </a></h4>
         </div>
-      </footer>
+    </footer>
 </body>
 
 
